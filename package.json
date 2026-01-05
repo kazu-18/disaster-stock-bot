@@ -1,0 +1,47 @@
+{
+  "name": "disaster-stock-bot",
+  "version": "1.0.0",
+  "description": "防災備蓄用食品管理LINEアプリ",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "deploy:webhook": "npm run build && cd dist && zip -r ../webhook-handler.zip . && cd .. && zip -r webhook-handler.zip node_modules",
+    "deploy:notification": "npm run build && cd dist && zip -r ../notification-checker.zip . && cd .. && zip -r notification-checker.zip node_modules"
+  },
+  "keywords": [
+    "line",
+    "bot",
+    "disaster",
+    "stock",
+    "management",
+    "aws",
+    "lambda",
+    "dynamodb"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@line/bot-sdk": "^8.0.0",
+    "@aws-sdk/client-dynamodb": "^3.490.0",
+    "@aws-sdk/lib-dynamodb": "^3.490.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.8",
+    "@types/uuid": "^9.0.7",
+    "@types/aws-lambda": "^8.10.133",
+    "@types/jest": "^29.5.11",
+    "typescript": "^5.3.3",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "eslint": "^8.56.0"
+  }
+}
