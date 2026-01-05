@@ -117,73 +117,73 @@ TypeScript + AWS Lambda + DynamoDB + LINE Messaging APIを使用した防災備�
 
 ---
 
-### フェーズ4: バックエンド開発（Webhook Handler）
+### フェーズ4: バックエンド開発（Webhook Handler） ✅
 
-- [ ] **4.1 型定義の作成**
-  - [ ] `src/types/index.ts` の実装
-    - [ ] `StockItem` インターフェース
-    - [ ] `WebhookEvent` インターフェース
-    - [ ] `Category` 型
-    - [ ] その他必要な型
+- [x] **4.1 型定義の作成**
+  - [x] `src/types/index.ts` の実装
+    - [x] `StockItem` インターフェース
+    - [x] `WebhookEvent` インターフェース
+    - [x] `Category` 型
+    - [x] その他必要な型
 
-- [ ] **4.2 ユーティリティ関数の実装**
-  - [ ] `src/utils/dateUtils.ts` の実装
-    - [ ] 日付フォーマット関数
-    - [ ] 賞味期限までの日数計算関数
-    - [ ] 日付バリデーション関数
+- [x] **4.2 ユーティリティ関数の実装**
+  - [x] `src/utils/dateUtils.ts` の実装
+    - [x] 日付フォーマット関数
+    - [x] 賞味期限までの日数計算関数
+    - [x] 日付バリデーション関数
 
-- [ ] **4.3 DynamoDBサービスの実装**
-  - [ ] `src/services/dynamoService.ts` の実装
-    - [ ] DynamoDB クライアントの初期化
-    - [ ] `createItem()` - 食品登録
-    - [ ] `getItemsByUserId()` - ユーザーの食品一覧取得
-    - [ ] `updateItemQuantity()` - 数量更新
-    - [ ] `deleteItem()` - 食品削除
-    - [ ] `queryByExpiryDate()` - 賞味期限でのクエリ
+- [x] **4.3 DynamoDBサービスの実装**
+  - [x] `src/services/dynamoService.ts` の実装
+    - [x] DynamoDB クライアントの初期化
+    - [x] `createItem()` - 食品登録
+    - [x] `getItemsByUserId()` - ユーザーの食品一覧取得
+    - [x] `updateItemQuantity()` - 数量更新
+    - [x] `deleteItem()` - 食品削除
+    - [x] `queryByExpiryDate()` - 賞味期限でのクエリ
 
-- [ ] **4.4 LINEサービスの実装**
-  - [ ] `src/services/lineService.ts` の実装
-    - [ ] LINE Bot クライアントの初期化
-    - [ ] `replyMessage()` - 返信メッセージ送信
-    - [ ] `pushMessage()` - プッシュメッセージ送信
-    - [ ] `buildFoodListMessage()` - 食品一覧のFlex Message生成
-    - [ ] `buildQuickReply()` - クイックリプライ生成
-    - [ ] `buildConfirmTemplate()` - 確認テンプレート生成
+- [x] **4.4 LINEサービスの実装**
+  - [x] `src/services/lineService.ts` の実装
+    - [x] LINE Bot クライアントの初期化
+    - [x] `replyMessage()` - 返信メッセージ送信
+    - [x] `pushMessage()` - プッシュメッセージ送信
+    - [x] `buildFoodListMessage()` - 食品一覧のFlex Message生成
+    - [x] `buildQuickReply()` - クイックリプライ生成
+    - [x] `buildConfirmTemplate()` - 確認テンプレート生成
 
-- [ ] **4.5 Webhook Handlerの実装**
-  - [ ] `src/handlers/webhookHandler.ts` の実装
-    - [ ] Lambda ハンドラー関数のエクスポート
-    - [ ] LINE署名検証
-    - [ ] イベントタイプ別のルーティング
-    - [ ] メッセージイベントの処理
-    - [ ] ポストバックイベントの処理
-    - [ ] 会話フローの状態管理（登録フロー）
-    - [ ] エラーハンドリング
+- [x] **4.5 Webhook Handlerの実装**
+  - [x] `src/handlers/webhookHandler.ts` の実装
+    - [x] Lambda ハンドラー関数のエクスポート
+    - [x] LINE署名検証
+    - [x] イベントタイプ別のルーティング
+    - [x] メッセージイベントの処理
+    - [x] ポストバックイベントの処理
+    - [x] 会話フローの状態管理（登録フロー）
+    - [x] エラーハンドリング
 
-- [ ] **4.6 会話フロー実装**
-  - [ ] 食品登録フローの実装
-    - [ ] カテゴリ選択
-    - [ ] 食品名入力
-    - [ ] 数量入力
-    - [ ] 賞味期限入力
-    - [ ] 確認・登録完了
-  - [ ] 一覧表示の実装
-  - [ ] 消費（数量変更）の実装
-  - [ ] 削除の実装
+- [x] **4.6 会話フロー実装**
+  - [x] 食品登録フローの実装
+    - [x] カテゴリ選択
+    - [x] 食品名入力
+    - [x] 数量入力
+    - [x] 賞味期限入力
+    - [x] 確認・登録完了
+  - [x] 一覧表示の実装
+  - [x] 消費（数量変更）の実装
+  - [x] 削除の実装
 
 ---
 
-### フェーズ5: バックエンド開発（Notification Checker）
+### フェーズ5: バックエンド開発（Notification Checker） ✅
 
-- [ ] **5.1 Notification Checkerの実装**
-  - [ ] `src/handlers/notificationChecker.ts` の実装
-    - [ ] Lambda ハンドラー関数のエクスポート
-    - [ ] 全ユーザーのスキャン
-    - [ ] 賞味期限チェックロジック（30日前、7日前、当日）
-    - [ ] 通知対象のグループ化
-    - [ ] 通知メッセージの生成
-    - [ ] LINE Push APIでの通知送信
-    - [ ] エラーハンドリング・リトライロジック
+- [x] **5.1 Notification Checkerの実装**
+  - [x] `src/handlers/notificationChecker.ts` の実装
+    - [x] Lambda ハンドラー関数のエクスポート
+    - [x] 全ユーザーのスキャン
+    - [x] 賞味期限チェックロジック（30日前、7日前、当日）
+    - [x] 通知対象のグループ化
+    - [x] 通知メッセージの生成
+    - [x] LINE Push APIでの通知送信
+    - [x] エラーハンドリング・リトライロジック
 
 ---
 
@@ -403,8 +403,8 @@ TypeScript + AWS Lambda + DynamoDB + LINE Messaging APIを使用した防災備�
 - **フェーズ1**: ✅ 完了 (2026-01-05)
 - **フェーズ2**: ⬜️ 未着手
 - **フェーズ3**: ⬜️ 未着手
-- **フェーズ4**: ⬜️ 未着手
-- **フェーズ5**: ⬜️ 未着手
+- **フェーズ4**: ✅ 完了 (2026-01-05)
+- **フェーズ5**: ✅ 完了 (2026-01-05)
 - **フェーズ6**: ⬜️ 未着手
 - **フェーズ7**: ⬜️ 未着手
 - **フェーズ8**: ⬜️ 未着手
